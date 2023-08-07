@@ -1,0 +1,106 @@
+/* #titlebar, */
+#firefox-view-button,
+#back-button,
+#forward-button,
+#stop-reload-button,
+#customizableui-special-spring1,
+#customizableui-special-spring2,
+#save-to-pocket-button
+{
+	display: none;
+}
+
+.titlebar-spacer[type="pre-tabs"] {
+	width: 10px !important;
+}
+
+#navigator-toolbox-background {
+	height: 55px;
+	transition: margin 300ms ease-in-out;
+}
+
+#navigator-toolbox-background:not(:focus-within):not(:hover) {
+	margin-top: -55px;
+}
+
+#titlebar {
+}
+
+#tabbrowser-tabs {
+	/* has no effect */
+	--tab-min-height: 36px !important;
+
+	/* change width of tabs */
+	--tab-min-width: 36px !important;
+
+	border: none !important;
+	margin-left: 10px !important;
+}
+
+.tab-close-button {
+	display: none;
+}
+
+/* Tab text */
+.tab-label-container {
+	display: none;
+}
+
+.tab-close-button {
+	display: none;
+}
+
+.tabbrowser-tab {
+	max-width: 0px !important;
+	min-height: 19px !important;
+}
+
+/* Move tabs below address bar */
+/*
+#navigator-toolbox {
+	flex-direction: column-reverse;
+}
+*/
+
+/* Hide close, minimize, fullscreen buttons */
+#titlebar-buttonbox-container {
+	display: none;
+}
+
+/* Remove space and border between close, minimize, fullscreen buttons and tabs */
+.titlebar-spacer[type="pre-tabs"] {
+	display: none;
+}
+
+/* Change height of tab */
+.tab-stack {
+	height: 25px;
+	min-height: 25px;
+}
+
+/* New tab button */
+#tabs-newtab-button {
+	height: 25px;
+}
+
+/* close, minimize, maximize */
+.titlebar-buttonbox-container {
+	height: 25px;
+}
+
+.toolbar-items {
+	height 25px;
+}
+
+#alltabs-button {
+	display: none;
+}
+
+#TabsToolbar-customization-target {
+	height: 25px;
+}
+
+/* remove new tab button */
+#tabbrowser-arrowscrollbox-periphery {
+	display: none;
+}
