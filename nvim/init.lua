@@ -43,13 +43,6 @@ lsp.setup()
 -- Treesitter
 -------------
 
-vim.api.nvim_create_autocmd({ "BufEnter" }, {
-    pattern = "*.js",
-    callback = function()
-        vim.cmd 'set filetype=typescript'
-    end
-})
-
 require('nvim-treesitter.configs').setup {
     ensure_installed = { "rust", "typescript", "javascript", "tsx", "lua", "vim", "vimdoc", "query", "java" },
     highlight = {
