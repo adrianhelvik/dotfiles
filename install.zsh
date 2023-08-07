@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 dotfiles_dir=$(dirname $(zsh -c 'echo ${0:A}' $0))
 
