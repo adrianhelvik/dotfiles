@@ -12,11 +12,12 @@ vim.opt.mouse = 'a'
 vim.opt.clipboard = 'unnamed'
 vim.opt.termguicolors = true
 vim.opt.splitright = true
+vim.opt.expandtab = true
 -- Disable comment continuation in insert mode
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
-	callback = function()
-		vim.opt.formatoptions:remove { 'c', 'r', 'o' }
-	end
+    callback = function()
+        vim.opt.formatoptions:remove { 'c', 'r', 'o' }
+    end
 })
 
 -- Layout
@@ -28,10 +29,10 @@ require 'theme'
 local lsp = require('lsp-zero').preset({})
 
 lsp.on_attach(function(client, bufnr)
-	-- see :help lsp-zero-keybindings
-	-- to learn the available actions
-	lsp.default_keymaps({ buffer = bufnr })
-	lsp.buffer_autoformat()
+    -- see :help lsp-zero-keybindings
+    -- to learn the available actions
+    lsp.default_keymaps({ buffer = bufnr })
+    lsp.buffer_autoformat()
 end)
 
 -- (Optional) Configure lua language server for neovim
@@ -43,17 +44,17 @@ lsp.setup()
 -------------
 
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
-	pattern = "*.js",
-	callback = function()
-		vim.cmd 'set filetype=typescript'
-	end
+    pattern = "*.js",
+    callback = function()
+        vim.cmd 'set filetype=typescript'
+    end
 })
 
 require('nvim-treesitter.configs').setup {
-	ensure_installed = { "rust", "typescript", "javascript", "tsx", "lua", "vim", "vimdoc", "query", "java" },
-	highlight = {
-		enabled = true
-	}
+    ensure_installed = { "rust", "typescript", "javascript", "tsx", "lua", "vim", "vimdoc", "query", "java" },
+    highlight = {
+        enabled = true
+    }
 }
 
 -- Key bindings
@@ -61,7 +62,7 @@ require('nvim-treesitter.configs').setup {
 local telescope = require 'telescope.builtin'
 vim.g.mapleader = ' '
 local function nnoremap(key, val)
-	vim.keymap.set('n', key, val, { remap = false })
+    vim.keymap.set('n', key, val, { remap = false })
 end
 
 nnoremap('øe', ':e $MYVIMRC<CR>')
@@ -78,10 +79,10 @@ vim.keymap.set('n', 'øs', ':call SynStack()<CR>', { remap = false })
 -- Misc
 -------
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-	pattern = "theme.lua",
-	callback = function()
-		vim.cmd 'so %'
-	end
+    pattern = "theme.lua",
+    callback = function()
+        vim.cmd 'so %'
+    end
 })
 
 vim.cmd [[
@@ -96,11 +97,11 @@ vim.cmd [[
 local cmp = require 'cmp'
 
 cmp.setup {
-	window = {
-		completion = cmp.config.window.bordered(),
-		documentation = cmp.config.window.bordered(),
-	},
-	mapping = cmp.mapping.preset.insert({
-		['<Tab>'] = cmp.mapping.confirm({ select = true }),
-	}),
+    window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+    },
+    mapping = cmp.mapping.preset.insert({
+        ['<Tab>'] = cmp.mapping.confirm({ select = true }),
+    }),
 }
